@@ -1,0 +1,233 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "nsrdos.uiportalprov_qas",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.119.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "nsrdos.uiportalprov_qas.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupId": "$direct"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "nsrdos.uiportalprov_qas.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RoutevMain",
+                    "pattern": "RoutevMain",
+                    "target": [
+                        "TargetvMain"
+                    ]
+                },
+                {
+                    "name": "Vista_Administrador_Usuarios",
+                    "pattern": "Vista_Administrador_Usuarios",
+                    "target": [
+                        "Vista_Administrador_Usuarios"
+                    ]
+                },
+                {
+                    "name": "Vista_Menu_Principal",
+                    "pattern": "Vista_Menu_Principal",
+                    "target": [
+                        "Vista_Menu_Principal"
+                    ]
+                },
+                {
+                    "name": "Vista_Registro_Factura_Sin_Vale",
+                    "pattern": "Vista_Registro_Factura_Sin_Vale",
+                    "target": [
+                        "Vista_Registro_Factura_Sin_Vale"
+                    ]
+                },
+                {
+                    "name": "Vista_Registro_Factura",
+                    "pattern": "Vista_Registro_Factura",
+                    "target": [
+                        "Vista_Registro_Factura"
+                    ]
+                },
+                {
+                    "name": "Vista_Registro_PedConDev",
+                    "pattern": "Vista_Registro_PedConDev",
+                    "target": [
+                        "Vista_Registro_PedConDev"
+                    ]
+                },
+                {
+                    "name": "Vista_Reporte_Fac_Registradas",
+                    "pattern": "Vista_Reporte_Fac_Registradas",
+                    "target": [
+                        "Vista_Reporte_Fac_Registradas"
+                    ]
+                },
+                {
+                    "name": "Vista_Reporte_Factura",
+                    "pattern": "Vista_Reporte_Factura",
+                    "target": [
+                        "Vista_Reporte_Factura"
+                    ]
+                },
+                {
+                    "name": "Vista_Reporte_Vale",
+                    "pattern": "Vista_Reporte_Vale",
+                    "target": [
+                        "Vista_Reporte_Vale"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetvMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vMain",
+                    "viewName": "vMain"
+                },
+                "Vista_Administrador_Usuarios": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Administrador_Usuarios",
+                    "viewName": "Vista_Administrador_Usuarios"
+                },
+                "Vista_Menu_Principal": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Menu_Principal",
+                    "viewName": "Vista_Menu_Principal"
+                },
+                "Vista_Registro_Factura_Sin_Vale": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Registro_Factura_Sin_Vale",
+                    "viewName": "Vista_Registro_Factura_Sin_Vale"
+                },
+                "Vista_Registro_Factura": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Registro_Factura",
+                    "viewName": "Vista_Registro_Factura"
+                },
+                "Vista_Registro_PedConDev": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Registro_PedConDev",
+                    "viewName": "Vista_Registro_PedConDev"
+                },
+                "Vista_Reporte_Fac_Registradas": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Reporte_Fac_Registradas",
+                    "viewName": "Vista_Reporte_Fac_Registradas"
+                },
+                "Vista_Reporte_Factura": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Reporte_Factura",
+                    "viewName": "Vista_Reporte_Factura"
+                },
+                "Vista_Reporte_Vale": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Vista_Reporte_Vale",
+                    "viewName": "Vista_Reporte_Vale"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "nsrdos.uiportalprov_qas.view.Vista_Menu_Principal",
+            "type": "XML",
+            "async": true,
+            "id": "vMain"
+        }
+    }
+}

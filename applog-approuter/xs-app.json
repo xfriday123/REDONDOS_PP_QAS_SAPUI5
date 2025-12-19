@@ -1,0 +1,68 @@
+{
+    
+    "authenticationMethod": "route",
+    "welcomeFile": "/index.html",
+    "logout": {
+        "logoutEndpoint": "/logout",
+        "logoutPage": "/index.html"
+    },
+    "routes": [
+        {
+            "source": "^/cpblant/(.*)$",
+            "target": "/$1",
+            "destination": "Capblsrv"
+        },
+        {
+            "source": "^/cpbl/(.*)$",
+            "target": "/$1",
+            "destination": "Capblclim"
+        },
+        {
+            "source": "^/s4h_tc/(.*)$",
+            "target": "/$1",
+            "destination": "SWD_QAS_260_RDOS_TC"
+        },
+        {
+            "source": "^/cpdb/(.*)$",
+            "target": "/$1",
+            "destination": "Capdbsrvpp_qas"
+        },  
+        {
+            "source": "^/cpdbprd/(.*)$",
+            "target": "/$1",
+            "destination": "Capdbsrvpp_prd"
+        },  
+        {
+            "source": "^/logout.html$",
+            "target": "/aaaplicacion/logout.html",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "none",
+            "cacheControl": "no-cache, no-store, must-revalidate"
+        },
+        {
+            "source": "^/index.html$",
+            "target": "/aaaplicacion/index.html",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa",
+            "cacheControl": "no-cache, no-store, must-revalidate"
+        },
+        {
+            "source": "^/resources/(.*)$",
+            "target": "/aaaplicacion/resources/$1",
+            "authenticationType": "none",
+            "destination": "ui5"
+        },
+        {
+            "source": "^/test-resources/(.*)$",
+            "target": "/aaaplicacion/test-resources/$1",
+            "authenticationType": "none",
+            "destination": "ui5"
+        },
+        {
+            "source": "^(.*)$",
+            "target": "/aaaplicacion/$1",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa"
+        }
+    ]
+  }

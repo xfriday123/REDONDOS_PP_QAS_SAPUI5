@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:tab="sap.ui.table"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="dialog_table_proveedor" contentWidth="30%" title="Ayuda de búsqueda de Proveedores" showHeader="true" icon="sap-icon://sales-order" titleAlignment="Center" >
+        
+        <FlexBox justifyContent="End">
+            <Button text="Aceptar" press="f_acepta_ayuda_busqueda_proveedor" type="Emphasized" class="sapUiTinyMargin" />
+            <Button text="Cancelar" press="f_cierra_dialog_proveedor" class="sapUiTinyMargin"/>
+        </FlexBox>
+
+        <f:Form editable="true" class="sapUiTinyMarginBottom" >
+            <f:layout>
+                <f:ColumnLayout columnsM="1" columnsL="1" columnsXL="1" />
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="Filtro de búsqueda">
+                            <f:fields>
+                                <Input id="txt_filtro_proveedor" valueLiveUpdate="true" liveChange="f_filtra_ayuda_busqueda_proveedor" value=""/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+        
+        <List id="list_proveedor" items="{ path: 'myParam>/listaProveedoresRUC',sorter: { path: 'myParam>descripcion', descending: false }}" mode="SingleSelect" includeItemInSelection="true" >
+            <StandardListItem title="{myParam>codigo}" description="{myParam>descripcion}" />
+        </List>
+        
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,23 @@
+{
+    "name": "mta-project",
+    "version": "0.0.1",
+    "description": "Build and deployment scripts",
+    "scripts": {
+        "clean": "rimraf resources mta_archives mta-op*",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar",
+<<<<<<< HEAD
+        "undeploy": "cf undeploy portalprov --delete-services --delete-service-keys"
+=======
+        "undeploy": "cf undeploy APPLOG --delete-services --delete-service-keys"
+>>>>>>> df75adc (ram1)
+    },
+    "devDependencies": {
+        "mbt": "^1.0.15",
+        "rimraf": "3.0.0"
+    }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> df75adc (ram1)

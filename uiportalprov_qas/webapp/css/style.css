@@ -1,0 +1,427 @@
+/* Enter your custom styles here */
+
+.styleIcon{
+	font-size : 2rem;
+}
+
+.cssDisabled{
+    pointer-events: none;
+}
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarLeft, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarLeft, .sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarRight, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarRight, .sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarPH, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarPH {
+    height: 2.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    justify-content: center;
+}
+
+.sapMOHR .sapMOHRAttr .sapMObjectAttributeTitle {
+    font-weight: bold;
+    padding-right: 0.5rem;
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+.sapMObjStatus>.sapMObjStatusTitle {
+    font-weight: bold;
+    padding-right: .25rem;
+}
+
+.size1 {
+    font-size: 1rem;
+}
+
+.size2 {
+    font-size: 1.5rem;
+}
+
+.sapMLIB.sapMLIBSelected {
+    background: #91cbff;
+}
+
+.styleVisualizarPass {
+    cursor: pointer;
+    padding-top: 12px;
+}
+
+.page2BgImg {
+    background-image: url('Fondo7.png');
+    background-size: 100% 100%;
+}
+
+.sapMNavItem.sapMPage {
+    background-image: url("Fondo8.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    /*    display: block;*/
+    height: 100%;
+}
+
+.miSeccionBlanca {
+    background-color: white;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+}
+
+.miVistaInputUsuario .sapMInputBaseContentWrapper {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.miVistaInputUsuario .sapMInputBaseContentWrapper:focus {
+    border: 1px solid #07c;
+    box-shadow: 0 0 10px #07c;
+}
+
+.miVistaLabelTitulo {
+    font-size: xx-large;
+}
+
+.miToolbar {
+    height: 2.75rem;
+    padding: 0 0rem !important;
+    background: transparent;
+}
+
+.miBotonUsuario .sapMBtnInner.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #26bb2f;
+    border-color: #16ad16;
+    color: #ffffff;
+    text-shadow: 0 0 0.125rem transparent;
+}
+
+.sapMTBStandard {
+    border-bottom: 1px solid #ffffff00;
+}
+
+.sapMLabel {
+    color: #000000;
+}
+
+.sapMIBar.sapMHeader-CTX {
+    color: #32363a;
+    background-color: #1b48757d;
+    filter: none;
+    background-image: none;
+}
+
+.sapMIBar-CTX .sapMLabel {
+    color: #ffffff;
+}
+
+.sapMImageContentImageIcon.sapUiIcon {
+    font-size: 1.75rem;
+    color: #003469;
+    padding-bottom: 0.5rem;
+}
+
+.sapMGT {
+    display: inline-block;
+    border-radius: 0.25rem;
+    position: relative;
+    outline: none;
+    box-sizing: border-box;
+    background-position: 0;
+    background: #ffffffc7;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    vertical-align: top;
+}
+
+.sapMGTHdrTxt>.sapMText {
+    color: #061d38;
+    font-weight: normal;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.miClaseToolbar {
+    height: 2rem;
+    background: #ffffff !important;
+    border-bottom: none;
+}
+
+
+/*.miFechaFondo{
+    background-color: aliceblue;
+    overflow-y: visible;
+}*/
+
+.miGrid.sapUiRespGridHSpace1 {
+    background-color: white;
+    padding: 0 0.5rem;
+}
+
+
+/*.miFondoLogin {
+    background-color: #2847cc57;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+}*/
+
+.sapUiRespGridMedia-Std-Desktop.sapUiRespGridHSpace1>.sapUiRespGridSpanL3 {
+    background-color: #7297e463;
+    width: 23.4375%;
+    width: -webkit-calc(25% - 1rem);
+    width: calc(25% - 1rem);
+}
+
+.miFechaFondo>section {
+    background-color: aliceblue !important;
+    position: absolute;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.miSplit .sapMPage>section {
+    background-color: #ffffffd9;
+    position: absolute;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sapMMessageToast {
+    box-sizing: border-box;
+    position: absolute;
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    font-size: 0.875rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    padding: 1rem;
+    background: #009affe6;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.15), 0 0.625rem 1.875rem 0 rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+}
+
+.sapMQuickViewPage .sapMQuickViewThumbnail {
+    background-color: #214e7b;
+    color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: #ffffff;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+
+.miIconoBlanco .sapMBtnIcon {
+    color: #ffffff;
+}
+
+.sapMITBContent {
+    padding: 0rem;
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.sapUiTableCell {
+    box-sizing: border-box;
+    border-right: 0.0625rem solid #d8dcf7 !important;
+    border-bottom: 0.0625rem solid #d8dcf7 !important;
+}
+
+.sapUiTableHeaderRow {
+    background-color: #bfc6ef !important;
+}
+
+.sapUiFormResGridCont>.sapUiFormElementLbl>.sapMLabel {
+    color: #000e54;
+    width: 100%;
+}
+
+.sapMQuickViewPage h1,
+.sapMQuickViewPage .sapUiForm .sapUiFormTitle {
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: normal;
+    color: #000e54;
+    padding-left: 0;
+}
+
+.section.sapMPageEnableScrolling {
+    overflow-y: auto;
+    background-color: aqua;
+    will-change: transform;
+}
+
+.miCabecera {
+    padding: 0.5rem;
+}
+
+.styleTextoFooter {
+    font-style: oblique;
+}
+
+
+/*Estilos Rojo 20200214*/
+
+span.sapMBtnInner.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #d10a0a;
+    border-color: #d10a0a;
+    color: #fff;
+}
+
+.sapMBtnIcon {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    max-height: 2.375rem;
+    color: #a00808;
+}
+
+.sapMBtnInner {
+    vertical-align: top;
+    -webkit-appearance: none;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    border: .0625rem solid #a00808;
+    color: #a00808;
+}
+
+.sapMIBar.sapMHeader-CTX {
+    color: #32363a;
+    background-color: #751b1b7d;
+    filter: none;
+    background-image: none;
+}
+
+.sapMTileCnt.News {
+    background-color: rgba(121, 6, 6, 0.85);
+}
+
+.sapMQuickViewPage .sapMQuickViewThumbnail {
+    background-color: #b72020;
+    color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+.sapMITBSelected>.sapMITBContentArrow::after {
+    background: #a00808;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+    color: #a00808;
+}
+
+.sapFAvatarColorAccent6 {
+    background-color: #b42828;
+}
+
+.sapMITBFilterIcon {
+    border: 1px solid #a00808;
+}
+
+.sapMITBSelected .sapMITBFilterDefault {
+    background: #a00808;
+    color: #fff;
+}
+
+.sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
+    background: #a00808;
+    color: #fff;
+    border-color: #a00808;
+}
+
+.sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel .sapMSegBBtnInner {
+    border-right: 1px solid #a00808;
+}
+
+.sapMSegBBtn.sapMSegBtnLastVisibleButton .sapMSegBBtnInner {
+    border-right: 1px solid #a00808;
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
+
+.sapMSegB .sapMSegBBtn .sapMSegBBtnInner {
+    border-top: 1px solid #a00808;
+    border-bottom: 1px solid #a00808;
+}
+
+.sapUiRespGridMedia-Std-Desktop.sapUiRespGridHSpace1>.sapUiRespGridSpanL3 {
+    background-color: #e4727263;
+    width: 23.4375%;
+    width: -webkit-calc(25% - 1rem);
+    width: calc(25% - 1rem);
+}
+
+.sapMBtn:hover>.sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive):not(.sapMToggleBtnPressed) {
+    background-color: #af6108;
+    border-color: #af6108;
+    color: #fff;
+}
+
+html.sap-desktop .sapMIBar.sapMFooter-CTX {
+    background-color: #ffffff8c;
+    border-top: 1px solid #d9d9d9;
+}
+
+.styleGeneratecaptcha {
+    color: blue;
+    text-decoration: line-through;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 28px;
+    padding-right: 21px;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.styleRUCProveedor {
+    background-color: white;
+    width: calc(100% - 0.1rem);
+}
+
+/* Estilo para ancho del master*/
+.sapMSplitContainerMaster {
+    box-sizing: border-box;
+    width: 24rem;
+    float: left;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border-right: .0625rem solid #d9d9d9;
+}
+
+/* Imagen */
+.cssCentrarImagen {
+    text-align: center;
+}

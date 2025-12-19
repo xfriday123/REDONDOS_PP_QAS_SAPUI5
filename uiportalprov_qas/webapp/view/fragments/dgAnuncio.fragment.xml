@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+>
+<Dialog contentWidth="60%" title="Anuncio" showHeader="false" titleAlignment="Center" >   
+    <customHeader>
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://decline" text="Cerrar" type="Emphasized" press="f_CancelShowAnuncio"/> 
+            </contentRight>
+        </Bar>
+    </customHeader>
+    <Carousel loop="true" pages="{ path: 'myParam>/listAnuncios' }"> 
+        <Image src="data:image/jpg;base64,{myParam>FILE_IMG_BINARIO}" alt="{myParam>FILE_IMG_NOMBRE}" press=".pressimage($event)" class="imagen-carousel" /> 
+	</Carousel>
+    <OverflowToolbar>  
+        <ToolbarSpacer/>
+        <!-- <Button icon="sap-icon://decline" text="Cerrar" type="Emphasized" press="f_CancelShowAnuncio"/>  -->
+    </OverflowToolbar>
+</Dialog>
+</core:FragmentDefinition>

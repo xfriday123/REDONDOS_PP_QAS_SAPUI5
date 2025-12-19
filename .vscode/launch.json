@@ -1,0 +1,109 @@
+{
+  "version": "0.2.0",
+<<<<<<< HEAD
+  "configurations": [
+    {
+<<<<<<< HEAD
+      "name": "Start uiportalprov_qas",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/uiportalprov_qas",
+=======
+      "name": "Start aplicacion",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/aplicacion",
+>>>>>>> df75adc (ram1)
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+<<<<<<< HEAD
+        "'test/flpSandbox.html#nsrdosuiportalprov_qas-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/portalprov/uiportalprov_qas\"}"
+      }
+    },
+    {
+      "name": "Start uiportalprov_qas Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/uiportalprov_qas",
+=======
+        "test/flpSandbox.html#aaaplicacion-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/APPLOG/aplicacion\"}"
+      }
+    },
+    {
+      "name": "Start aplicacion Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/aplicacion",
+>>>>>>> df75adc (ram1)
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+<<<<<<< HEAD
+        "'test/flpSandbox.html#nsrdosuiportalprov_qas-display'"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/portalprov_qas/uiportalprov_qas\"}"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "UI5Version",
+      "type": "command",
+      "command": "sap.ux.appGenerator.ui5Version"
+    }
+=======
+        "test/flpSandbox.html#aaaplicacion-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/APPLOG/aplicacion\"}"
+      }
+    }
+>>>>>>> df75adc (ram1)
+  ]
+=======
+  "configurations": []
+>>>>>>> c2cffb0 (testy)
+}

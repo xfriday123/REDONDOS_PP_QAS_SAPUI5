@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--     <meta http-equiv="Content-Security-policy" content="default-src 'self' https://sapui5.hana.ondemand.com/resources/ 'unsafe-inline' 'unsafe-eval';style-src 'self'  https://sapui5.hana.ondemand.com/resources/ 'unsafe-inline' 'unsafe-eval';"/> -->
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <title>Portal de Proveedores QAS</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-resourceroots='{
+            "nsrdos.uiportalprov_qas": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2W64VG0W26"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W64VG0W26');
+    </script>
+    <link rel="stylesheet" href="css/onload.css">
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <div
+        data-sap-ui-component
+        data-name="nsrdos.uiportalprov_qas"
+        data-id="container"
+        data-settings='{"id" : "nsrdos.uiportalprov_qas"}'
+        data-handle-validation="true"
+    ></div>
+    <div id="splash-screen">
+            <div class="splash-screen-text">Cargando..</div>
+            <div class="splash-screen-circle-outer"></div>
+            <div class="splash-screen-circle-inner"></div>
+        </div>  
+</body>
+</html>
