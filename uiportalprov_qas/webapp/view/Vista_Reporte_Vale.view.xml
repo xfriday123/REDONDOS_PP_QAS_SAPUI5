@@ -23,11 +23,11 @@
 						<m:content>
 							<m:SearchField liveChange="onSearchFac" width="100%" placeholder="Buscar doc. ingreso / hoja de servicio"/>
 							<m:List id="idListMaster1" items="{ path : 'myParam>/listReporteVale'}" includeItemInSelection="true" mode="SingleSelectMaster"
-								noDataText="No se halló ningún doc.ingreso/hoja de servicio" select="clicItemFactura">
+								noDataText="No se halló ningún doc.ingreso/hoja de servicio" select="clicItemFactura1">
 								<m:items>
 									<m:ObjectListItem id="idListaTitulos"
 										title="{parts: [{path: 'myParam>DOC_MATERIAL'},{path: 'myParam>HOJA_ENTRADA'},{path: 'myParam>GUIA_REMISION'},{path: 'myParam>CENTROS'},{path: 'myParam>TIPO'}],formatter: '.formatoValeHoja'}"
-										icon="{parts: [{path: 'myParam>FLAC'}],formatter: '.formatTipoCargaAsignacion'}" type="Active" press="clicItemFactura">
+										icon="{parts: [{path: 'myParam>FLAC'}],formatter: '.formatTipoCargaAsignacion'}" type="Active" press="clicItemFactura1">
 										<m:attributes>
 											<m:ObjectAttribute title="Tipo" text="{ path: 'myParam>TIPO', formatter: '.formatoValeHoja4' }"/>
 											<m:ObjectAttribute id="idGuiaCentroTail" title="{ path: 'myParam>TIPO', formatter: '.formatTipoCarga1' }"

@@ -1544,7 +1544,7 @@ sap.ui.define([
                 $.ajax({
                     type: "GET",
                     async: false,
-                    url: this.varTableURL + "/" + this.varTableT_ING + "?$format=json&$skiptoken=" + this.oGlobalIteracion0 + "&$filter=(TIPO eq '" + varTipo11 + "' or TIPO eq '" + varTipo12 + "') and EM_RUC eq '" + usuarioRuc + "' and US_RUC eq '" + usuarioLogin + "' and AZO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "'",
+                    url: this.varTableURL + "/" + this.varTableT_ING + "?$format=json&$skiptoken=" + this.oGlobalIteracion0 + "&$filter=(TIPO eq '" + varTipo11 + "' or TIPO eq '" + varTipo12 + "') and EM_RUC eq '" + usuarioRuc + "' and US_RUC eq '" + usuarioLogin + "' and (AZO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "' or AZO eq '2025')",
                     //sorters: sorters,
                     success: function (response) {
 
@@ -1610,7 +1610,7 @@ sap.ui.define([
                                 filters: filters1OC,*/
                             $.ajax({
                                 type: "GET",
-                                url: this.varTableURL + "/" + this.varTableT_OC_DET + "?$format=json&$filter=(DE_TIPO eq '" + varTipo11 + "' or DE_TIPO eq '" + varTipo12 + "') and EM_RUC eq '" + usuarioRuc + "' and US_RUC eq '" + usuarioLogin + "' and DE_ANO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "'",
+                                url: this.varTableURL + "/" + this.varTableT_OC_DET + "?$format=json&$filter=(DE_TIPO eq '" + varTipo11 + "' or DE_TIPO eq '" + varTipo12 + "') and EM_RUC eq '" + usuarioRuc + "' and US_RUC eq '" + usuarioLogin + "' and (DE_ANO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "' or DE_ANO eq '2025')",
                                 success: function (response) {
 
                                     var oModelJSONOC = new sap.ui.model.json.JSONModel(response.value);
@@ -1725,33 +1725,13 @@ sap.ui.define([
                     }.bind(this)
                 });
             }
-
-            if (tipo === "D") {
-                filter2 = new sap.ui.model.Filter("DE_TIPO", sap.ui.model.FilterOperator.EQ, "D");
-                filters_t_2_1.push(filter2);
-                filter2 = new sap.ui.model.Filter("DE_TIPO", sap.ui.model.FilterOperator.EQ, "S");
-                filters_t_2_1.push(filter2);
-                filters2.push(new sap.ui.model.Filter(filters_t_2_1, false));
-                /*filter2 = new sap.ui.model.Filter("DE_TIPO", sap.ui.model.FilterOperator.EQ, tipo);
-                filters2.push(filter2);*/
-            } else if (tipo === "H") {
-                filter2 = new sap.ui.model.Filter("DE_TIPO", sap.ui.model.FilterOperator.EQ, tipo);
-                filters2.push(filter2);
-            } else {
-                filter2 = new sap.ui.model.Filter("DE_TIPO", sap.ui.model.FilterOperator.EQ, tipo);
-                filters2.push(filter2);
-            }
-
-            filter2 = new sap.ui.model.Filter("EM_RUC", sap.ui.model.FilterOperator.EQ, usuarioRuc);
-            filters2.push(filter2);
-            filter2 = new sap.ui.model.Filter("US_RUC", sap.ui.model.FilterOperator.EQ, usuarioLogin);
-            filters2.push(filter2);
-            sorter2 = new sap.ui.model.Sorter("DE_POS_DOC_MATERIAL", false);
-            sorters2.push(sorter2);
-
-            /*oModel.read("/" + this.varTableT_ING_DET + "?$format=json", {
-                filters: filters2,
-                sorters: sorters2,*/
+        },
+        clicItemFactura1: function (oEvent) {
+            var oThis = this;
+            var oModel = oThis.getView().getModel("myParam");
+            var itemSeleccionado = oEvent.getSource().getSelectedItem();
+            var factura = itemSeleccionado.getBindingContext("myParam").getObject();
+            oModel.setProperty("/listConsultaResumenFacturaCabecera", factura);
             var oThis = this;
             var oModel9 = oThis.getView().getModel("myParam");
             this.oGlobalStop10 = "S";
@@ -1762,7 +1742,7 @@ sap.ui.define([
                 $.ajax({
                     type: "GET",
                     async: false,
-                    url: this.varTableURL + "/" + this.varTableT_ING_DET + "?$format=json&$skiptoken=" + this.oGlobalIteracion0 + "&$filter=(DE_TIPO eq '" + varTipo11 + "' or DE_TIPO eq '" + varTipo12 + "') and EM_RUC eq '" + usuarioRuc + "' and US_RUC eq '" + usuarioLogin + "' and DE_ANO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "'",
+                    url: this.varTableURL + "/" + this.varTableT_ING_DET + "?$format=json&$skiptoken=" + this.oGlobalIteracion0 + "&$filter=(DE_TIPO eq '" + factura.TIPO + "') and EM_RUC eq '" + factura.EM_RUC + "' and US_RUC eq '" + factura.US_RUC + "' and DE_HOJA_ENTRADA eq '" + factura.HOJA_ENTRADA + "'  and DE_DOC_MATERIAL eq '" + factura.DOC_MATERIAL + "' and (DE_ANO eq '" + oModel9.getProperty("/oGlobalTipoFechaAnio01") + "' or DE_ANO eq '2025')",
                     success: function (response) {
 
                         var oDataHana = response.value;
@@ -1805,67 +1785,64 @@ sap.ui.define([
 
                             for (var i = 0; i < lenghtV; i++) {
                                 llave = {};
-                                llave = oModelJSON.getData()[i];
-                                /*llave.DE_POS_DOC_MATERIAL = oModelJSON.getData()[i].DE_POS_DOC_MATERIAL;
-                                llave.DE_DOC_MATERIAL = oModelJSON.getData()[i].DE_DOC_MATERIAL;
-                                llave.DE_HOJA_ENTRADA = oModelJSON.getData()[i].DE_HOJA_ENTRADA;
-                                llave.DE_NUM_LINEA = oModelJSON.getData()[i].DE_NUM_LINEA;
-                                llave.EM_RUC = oModelJSON.getData()[i].EM_RUC;
-                                llave.US_RUC = oModelJSON.getData()[i].US_RUC;
-                                llave.ALMACEN = oModelJSON.getData()[i].ALMACEN;
-                                llave.CENTROS = oModelJSON.getData()[i].CENTROS;
-                                llave.CENTROV = oModelJSON.getData()[i].CENTROV;
-                                llave.COMPRADORS = oModelJSON.getData()[i].COMPRADORS;
-                                llave.COMPRADORV = oModelJSON.getData()[i].COMPRADORV;
-                                llave.DE_ANO = oModelJSON.getData()[i].DE_ANO;
-                                llave.DE_CANTIDAD = oModelJSON.getData()[i].DE_CANTIDAD;
-                                llave.DE_CANTIDAD_A_FACTURAR = oModelJSON.getData()[i].DE_CANTIDAD_A_FACTURAR;
-                                llave.DE_COD_EMPRESA = oModelJSON.getData()[i].DE_COD_EMPRESA;
-                                llave.DE_CONDICION = oModelJSON.getData()[i].DE_CONDICION;
-                                llave.DE_DESCRIPCION = oModelJSON.getData()[i].DE_DESCRIPCION;
-                                llave.DE_DIRECCION = oModelJSON.getData()[i].DE_DIRECCION;
-                                llave.DE_ESTADO = oModelJSON.getData()[i].DE_ESTADO;
-                                llave.DE_FACTURA = oModelJSON.getData()[i].DE_FACTURA;
-                                llave.DE_FEC_ACEPTACION = oModelJSON.getData()[i].DE_FEC_ACEPTACION;
-                                llave.DE_FEC_CONTABILIZACION = oModelJSON.getData()[i].DE_FEC_CONTABILIZACION;
-                                llave.DE_FEC_REGISTRO = oModelJSON.getData()[i].DE_FEC_REGISTRO;
-                                llave.DE_FLAC = oModelJSON.getData()[i].DE_FLAC;
-                                llave.DE_GUIA_REMISION = oModelJSON.getData()[i].DE_GUIA_REMISION;
-                                llave.DE_IGV = oModelJSON.getData()[i].DE_IGV;
-                                llave.DE_LIBERADO = oModelJSON.getData()[i].DE_LIBERADO;
-                                llave.DE_MONEDA = oModelJSON.getData()[i].DE_MONEDA;
-                                llave.DE_NUMERO_ORDEN = oModelJSON.getData()[i].DE_NUMERO_ORDEN;
-                                llave.DE_NUM_ACEPTACION = oModelJSON.getData()[i].DE_NUM_ACEPTACION;
-                                llave.DE_NUM_ARTICULO = oModelJSON.getData()[i].DE_NUM_ARTICULO;
-                                llave.DE_NUM_DOC_SAP = oModelJSON.getData()[i].DE_NUM_DOC_SAP;
-                                llave.DE_NUM_FACTURA = oModelJSON.getData()[i].DE_NUM_FACTURA;
-                                llave.DE_NUM_MATERIAL = oModelJSON.getData()[i].DE_NUM_MATERIAL;
-                                llave.DE_NUM_SERVICIO = oModelJSON.getData()[i].DE_NUM_SERVICIO;
-                                llave.DE_PEDIDO = oModelJSON.getData()[i].DE_PEDIDO;
-                                llave.DE_POSICION = oModelJSON.getData()[i].DE_POSICION;
-                                llave.DE_PRECIO = oModelJSON.getData()[i].DE_PRECIO;
-                                llave.DE_SITUACION1 = oModelJSON.getData()[i].DE_SITUACION1;
-                                llave.DE_SITUACION2 = oModelJSON.getData()[i].DE_SITUACION2;
-                                llave.DE_SUBTOTAL = oModelJSON.getData()[i].DE_SUBTOTAL;
-                                llave.DE_TIPO = oModelJSON.getData()[i].DE_TIPO;
-                                llave.DE_TOTAL = oModelJSON.getData()[i].DE_TOTAL;
-                                llave.DE_UND_MEDIDA = oModelJSON.getData()[i].DE_UND_MEDIDA;
-                                llave.DOC_PROVEEDOR = oModelJSON.getData()[i].DOC_PROVEEDOR;
-                                llave.LOTE = oModelJSON.getData()[i].LOTE;
-                                llave.NON_CENTRO = oModelJSON.getData()[i].NON_CENTRO;
-                                llave.NOTA_RECEPCION = oModelJSON.getData()[i].NOTA_RECEPCION;
-                                llave.NROSOLICITU = oModelJSON.getData()[i].NROSOLICITU;
-                                llave.NRO_CONTRATO = oModelJSON.getData()[i].NRO_CONTRATO;
-                                llave.RECEPTOR = oModelJSON.getData()[i].RECEPTOR;
-                                llave.REFERENCIA = oModelJSON.getData()[i].REFERENCIA;
-                                llave.SOLICITUDS = oModelJSON.getData()[i].SOLICITUDS;
-                                llave.UBICACION = oModelJSON.getData()[i].UBICACION;
-                                llave.USUARIO = oModelJSON.getData()[i].USUARIO;*/
+                                llave = oModelJSON.getData()[i];                              
                                 vector.push(llave);
                             }
-                        }
+                            oModel9.setProperty("/listReporteValeDetalle", vector);
+                            var varlistReporteValeDetalle = oModel9.getProperty("/listReporteValeDetalle");
+                            // Detalle
+                            var varCont = 0;
+                            var vector = [];
+                            var llave = {};
+                            var varSumaTotal = 0;
+                            var varSumaCantidad = 0;
+                            var varMoneda = "";
+                            var precioTotal = 0;
+                            for (var i = 0; i < varlistReporteValeDetalle.length; i++) {
+                                if (varlistReporteValeDetalle[i].US_RUC === factura.US_RUC &&
+                                    varlistReporteValeDetalle[i].EM_RUC === factura.EM_RUC &&
+                                    varlistReporteValeDetalle[i].DE_HOJA_ENTRADA === factura.HOJA_ENTRADA &&
+                                    varlistReporteValeDetalle[i].DE_DOC_MATERIAL === factura.DOC_MATERIAL) {
+                                    precioTotal = varlistReporteValeDetalle[i].DE_TOTAL;
+                                    precioTotal = precioTotal.replace(/,/g, '');
+                                    varSumaTotal = parseFloat(varSumaTotal, 10) + parseFloat(precioTotal, 10);
+                                    varSumaCantidad = parseFloat(varSumaCantidad, 10) + parseFloat(varlistReporteValeDetalle[i].DE_CANTIDAD, 10);
+                                    varMoneda = varlistReporteValeDetalle[i].DE_MONEDA;
 
-                        oModelMyParam.setProperty("/listReporteValeDetalle", vector);
+                                    llave = {};
+                                    llave = varlistReporteValeDetalle[i];
+                                    vector.push(llave);
+
+                                    varCont++;
+                                }
+                            }
+                            var sumaTotal = varSumaTotal.toFixed(2);
+                            sumaTotal = this.numberWithCommas(sumaTotal);
+                            this.getView().byId("idlistConsultaResumenFacturaCabeceraCantidad").setText(varSumaCantidad);
+                            this.getView().byId("ohFac").setNumber(sumaTotal);
+                            this.getView().byId("ohFac").setNumberUnit(varMoneda);
+
+                            oModel.setProperty("/listConsultaResumenFacturaDetalle", vector);
+
+                            this.getView().byId("idlistConsultaResumenFacturaCabeceraPosiciones").setText(varCont);
+
+                            var varMensajeFlacEstado = "";
+                            var varStateFlacEstado = "";
+                            if (factura.FLAC === "") {
+                                varMensajeFlacEstado = "Disponible para facturar";
+                                varStateFlacEstado = "Success";
+                            } else {
+                                varMensajeFlacEstado = "Asignado a factura";
+                                varStateFlacEstado = "Information";
+                            }
+                            this.getView().byId("idlistConsultaResumenFacturaCabeceraEstado").setText(varMensajeFlacEstado);
+                            this.getView().byId("idlistConsultaResumenFacturaCabeceraEstado").setState(varStateFlacEstado);
+
+                            this.getView().byId("idDescargarPDF").setVisible(true);
+                            this.getView().byId("ohFac").setVisible(true);
+                            this.getView().byId("idTabBarFac").setVisible(true);
+                            this.getDataOrdenCompra();                            
+                        }
                     }.bind(this),
                     error: function (oError) {
                         this.oGlobalStop10 = "N";
@@ -1873,7 +1850,6 @@ sap.ui.define([
                 });
             }
         },
-
         formatTipoCarga: function (guia, centro, tipo) {
             if (tipo !== "" && tipo !== "M" && tipo !== null && tipo !== undefined) {
                 if (tipo === "D" || tipo === "S") {
